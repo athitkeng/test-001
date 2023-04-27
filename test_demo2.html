@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container" style="margin-top: 20px">
+    <div class="row">
+      <div style="background-color: purple;">
+
+      </div>
+      <h1 class="display-1 fw-bolder fs-1 text-light text-center " style="background-color: purple;" >PEA Member</h1> 
+      
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-4 d-grid gap-2">
+          
+          <div class="col-lg-12 text-center">
+
+            <label for="modeSelect" class="text-center fw-bold fs-4">Select Dashboard Style</label><br><br> 
+            <input type="checkbox" id="darkMode" name="mode" value="dark">
+             <label for="darkMode">Dark Mode</label>
+
+             <br>
+
+             <input type="checkbox" id="lightMode" name="mode" value="light">
+            <label for="lightMode">Light Mode</label>
+            
+            <br><br>
+
+            <button type="button" class=" btn btn-warning fw-bolder fs-6" onclick="changeMode()">submit</button>     
+          </div> 
+
+          
+          <br>
+      </div>
+
+
+
+
+      <div class="col-sm-6 col-md-7 offset-md-2 col-lg-8 offset-lg-0">
+        <table id="myTable" class="table table-dark">
+            <tr>
+                <th scope="row">1</th>
+                <td>เก่ง</td>
+                <td>วศก. 4</td>
+                <td>ผวฟ.</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>ฟลุค</td>
+                <td>วศก. 4</td>
+                <td>ผวฟ.</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>หนึ่ง</td>
+                <td>วศก. 4</td>
+                <td>ผวพ.</td>
+              </tr>
+          </table>
+        
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="display-1 fw-bolder fs-4 text-dark text-center bg-warning"">Provincial Electricity Authority</h1> 
+      
+    </div>
+  </div>
+  <script>
+    function changeMode() {
+  var table = document.getElementById("myTable");
+  var darkCheckbox = document.getElementById("darkMode");
+  var lightCheckbox = document.getElementById("lightMode");
+  
+  if (darkCheckbox.checked) {
+    lightCheckbox.checked = false;
+    table.classList.remove("table-light");
+    table.classList.add("table-dark");
+  } else if (lightCheckbox.checked) {
+    darkCheckbox.checked = false;
+    table.classList.remove("table-dark");
+    table.classList.add("table-light");
+  } else {
+    table.classList.remove("table-light");
+    table.classList.add("table-dark");
+  }
+}
+
+var darkCheckbox = document.getElementById("darkMode");
+var lightCheckbox = document.getElementById("lightMode");
+
+darkCheckbox.addEventListener('click', function() {
+  if (this.checked) {
+    lightCheckbox.checked = false;
+  }
+});
+
+lightCheckbox.addEventListener('click', function() {
+  if (this.checked) {
+    darkCheckbox.checked = false;
+  }
+});
+
+
+  </script>
+
+</body>
+</html>
